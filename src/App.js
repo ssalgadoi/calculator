@@ -4,6 +4,7 @@ import logo from './image/logo.png';
 import Screen from './componets/screen';
 import ButtonClear from './componets/buttonClear';
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
 
   const addInput = value => {
     setInput(input + value);
+  };
+
+  const calculateResults = () => {
+    setInput(evaluate(input));
   };
 
 
@@ -45,13 +50,15 @@ function App() {
         <Button handleClick={ addInput }>*</Button>
       </div>
       <div className='fila'>
-        <Button handleClick={ addInput }>=</Button>
+        <Button handleClick={ calculateResults }>=</Button>
         <Button handleClick={ addInput }>0</Button>
         <Button handleClick={ addInput }>.</Button>
         <Button handleClick={ addInput }>/</Button>
       </div>
       <div className='fila'>
-        <ButtonClear>Clear</ButtonClear>
+        <ButtonClear handleClick={() => setInput('')}>
+          Clear
+        </ButtonClear>
       </div>
     </div>
     </div>
