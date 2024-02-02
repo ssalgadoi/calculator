@@ -3,10 +3,10 @@ import '../style/buttonClear.css';
 
 
 const ButtonClear = (props) => (
-    <div className="button-clear" 
+    <button className="button-clear" 
     onClick={ props.handleClick }>
     { props.children }
-    </div>
+    </button>
 );
 
 export default ButtonClear;

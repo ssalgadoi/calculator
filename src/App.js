@@ -1,10 +1,11 @@
 import './App.css';
 import Button from './componets/button';
-import logo from './image/logo.png';
+
 import Screen from './componets/screen';
 import ButtonClear from './componets/buttonClear';
 import { useState } from 'react';
 import { evaluate } from 'mathjs';
+import Logo from './componets/logo';
 
 
 function App() {
@@ -27,12 +28,7 @@ function App() {
 
   return (
     <div className="App">
-    <div className='container-logo'>
-      <img 
-      src={ logo }
-      className='logo' 
-      alt='Logo' />
-    </div>
+    <Logo />
     <div className='container-calculator'>
       <Screen input={ input } />
       <div className='fila'>
